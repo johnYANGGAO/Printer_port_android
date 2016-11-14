@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bjut.printer2"
+    android:versionCode="12"
+    android:versionName="1.57" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- 浮动通知权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 自定义权限 -->
+    <uses-permission android:name="getui.permission.GetuiService.com.bjut.printer2" />
+
+    <permission
+        android:name="getui.permission.GetuiService.com.bjut.printer2"
+        android:protectionLevel="normal" />
+
+    <application
+        android:name="com.bjut.printer.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.bjut.printer.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bjut.printer.activity.FileChooser"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bjut.printer.activity.SetUpActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.bjut.printer.activity.DownloadActivity"
+            android:screenOrientation="landscape" />
+
+        <receiver
+            android:name="com.bjut.printer.bean.LogAdd"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.ZQYiCZYIkA73IucE83Dlg9" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.bjut.printer.BroadCast.BootBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.bjut.printer.services.ServerSocketService" >
+            <intent-filter>
+                <action android:name="com.bjut.printer.services.ServerSocketService.LocalBinder" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.bjut.printer.services.CheckOrDownloadIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.bjut.printer.BroadCast.MechanicalStatusReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="com.bjut.printer.services.IOService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.bjut.printer.services.IOService.IOBinder" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.bjut.printer.BroadCast.ErrorBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name="com.bjut.printer.BroadCast.StartSocketServiceReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name="com.bjut.printer.BroadCast.WarningReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name="com.bjut.printer.BroadCast.UpdateAPKReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.bjut.printer.activity.LevelingActivity" />
+
+        <receiver
+            android:name="com.bjut.printer.BroadCast.LevelingReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- 个推SDK配置开始 -->
+        <!-- 配置的第三方参数属性 -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="ZQYiCZYIkA73IucE83Dlg9" />
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="6UDTpG2WRTABh9TARQoIK4" />
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="0CcNdlgDMP6BJIYnizBiu1" /> <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.igexin.sdk.PushServiceUser"
+            android:exported="true"
+            android:label="NotificationCenterUser" />
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+                <!-- 以下四项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.igexin.sdk.GActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver> <!-- android:authorities="downloads.第三方包名" -->
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.bjut.printer2"
+            android:process=":pushservice" />
+    </application>
+
+</manifest>

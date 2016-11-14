@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">O.MEprinter2</string>
+    <string name="up_one_level">..(返回上一级目录)</string>
+    <string name="current_dir">.(刷新)</string>
+    <string name="error_configuration">Please configure your serial port first.</string>
+    <string name="error_security">You do not have read/write permission to the serial
+		port.</string>
+    <string name="error_unknown">The serial port can not be opened for an unknown
+		reason.</string>
+    <string name="range">范围</string>
+    <string name="retract_length">回丝长度</string>
+    <string name="retract_feedrate">回丝速度</string>
+    <string name="accel_retract">回丝加速度</string>
+    <string name="extruder_test_step">挤出机步长</string>
+    <string name="extruder_test_feedrate">挤出机速度</string>
+    <string name="flow">挤出量</string>
+    <string name="accel">加速度</string>
+    <string name="v_x">X最大速度</string>
+    <string name="v_y">Y最大速度</string>
+    <string name="v_z">Z最大速度</string>
+    <string name="v_e">E最大速度</string>
+    <string name="a_x">X最大加速度</string>
+    <string name="a_y">Y最大加速度</string>
+    <string name="a_z">Z最大加速度</string>
+    <string name="a_e">E最大加速度</string>
+    <string name="steps_x">X steps</string>
+    <string name="steps_y">Y steps</string>
+    <string name="steps_z">Z steps</string>
+    <string name="steps_e">E steps</string>
+    <string name="error_openserial">打开设备通信串口失败请重启机器后重试.</string>
+</resources>

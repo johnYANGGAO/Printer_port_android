@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/johnsmac/Documents/my_git_center/O.MEPrinter2/app/build/intermediates/res/merged/debug/raw/keep.xml",
+        "source": "/Users/johnsmac/Documents/my_git_center/O.MEPrinter2/app/build/intermediates/exploded-aar/com.getui/sdk/2.9.0.0/res/raw/keep.xml"
+    },
+    {
+        "merged": "/Users/johnsmac/Desktop/Printer_port_android/app/build/intermediates/res/merged/debug/raw/keep.xml",
+        "source": "/Users/johnsmac/Desktop/Printer_port_android/app/build/intermediates/exploded-aar/com.getui/sdk/2.9.0.0/res/raw/keep.xml"
+    },
+    {
+        "merged": "/Users/johnsmac/Documents/my_git_center/O.MEPrinter2/app/build/intermediates/res/merged/debug/raw/bee.mp3",
+        "source": "/Users/johnsmac/Documents/my_git_center/O.MEPrinter2/app/src/main/res/raw/bee.mp3"
+    },
+    {
+        "merged": "/Users/johnsmac/Desktop/Printer_port_android/app/build/intermediates/res/merged/debug/raw/bee.mp3",
+        "source": "/Users/johnsmac/Desktop/Printer_port_android/app/src/main/res/raw/bee.mp3"
+    }
+]

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    tools:context="com.bjut.printer.activity.LevelingActivity" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/blue" >
+
+        <TextView
+            android:id="@+id/text_back"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="平台调平"
+            android:textColor="@color/white"
+            android:textSize="45sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/myRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="18dp"
+        android:paddingTop="18dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp" >
+
+            <TextView
+                android:id="@+id/rb_a"
+                style="@style/type_radio_button"
+                android:checked="false"
+                android:text="A" />
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/dan_hui" />
+
+            <TextView
+                android:id="@+id/rb_b"
+                style="@style/type_radio_button"
+                android:checked="false"
+                android:text="B" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dan_hui" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/rb_c"
+                style="@style/type_radio_button"
+                android:checked="false"
+                android:text="C" />
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/dan_hui" />
+
+            <TextView
+                android:id="@+id/rb_d"
+                style="@style/type_radio_button"
+                android:checked="false"
+                android:text="D" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/myRadioGroup"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="选点前，请保证平台已停止移动"
+        android:textColor="@color/blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/click_text_button_blue_selector"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="15dp"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="45sp" />
+
+</RelativeLayout>
